@@ -1,0 +1,13 @@
+name: restaurant
+label: Restaurant
+declared: "Dine-in and takeaway meals; evening and weekend peaks"
+capacity_txn_per_day: {small: 50, medium: 140, large: 350}
+ticket_mean: 450
+ticket_sd_log: 0.40
+shares: {round: 0.12, night: 0.18, new_payer: 0.40, top_payer: 0.06}
+calendar: {festival: 0.20, salary: 0.06, weekend: 0.30, match: 0.05}
+adjacent: {name: "Catering and party orders", txn: 0.05, ticket: 0.40, round: 0.08}
+crimes: [betting, mule]
+hardest_to_fake: "Table turnover, food-cost ratio, delivery platform overlap"
+base_rate: 0.01
+priors: {none: 0.77, growth: 0.10, decline: 0.03, adjacent: 0.08, betting: 0.014, mule: 0.006}

@@ -1,0 +1,13 @@
+name: jewellery
+label: Jewellery shop
+declared: "Gold and silver jewellery; few, large, festival-driven purchases"
+capacity_txn_per_day: {small: 6, medium: 15, large: 40}
+ticket_mean: 18000
+ticket_sd_log: 0.45
+shares: {round: 0.35, night: 0.02, new_payer: 0.45, top_payer: 0.30}
+calendar: {festival: 1.2, salary: 0.05, weekend: 0.15, match: 0.0}
+adjacent: {name: "Gold savings scheme instalments", txn: 0.25, ticket: -0.3, round: 0.15}
+crimes: [mule, betting]
+hardest_to_fake: "Hallmarked inventory matching sales, festival peaks"
+base_rate: 0.008
+priors: {none: 0.79, growth: 0.08, decline: 0.03, adjacent: 0.08, betting: 0.004, mule: 0.016}
