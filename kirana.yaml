@@ -1,0 +1,26 @@
+# Worked node: kirana (neighbourhood grocery). All values illustrative.
+name: kirana
+label: Kirana store
+declared: "Daily groceries, mostly small repeat purchases from nearby households"
+capacity_txn_per_day: {small: 60, medium: 160, large: 400}
+ticket_mean: 180          # Rs
+ticket_sd_log: 0.35       # spread of ticket size across kiranas
+shares:                   # baseline daily shares of transactions
+  round: 0.10             # round amounts (multiples of Rs 100, >= Rs 500)
+  night: 0.04             # 22:00 - 04:00
+  new_payer: 0.12         # payers never seen at this merchant before
+  top_payer: 0.15         # share of value from the top 5 payers
+calendar:                 # multiplicative uplift on transaction count
+  festival: 0.35
+  salary: 0.12
+  weekend: 0.08
+  match: 0.0              # IPL match nights: no effect for a real kirana
+adjacent:                 # auxiliary lines that are fine (not fronts)
+  name: "Mobile recharge and bill payments"
+  txn: 0.10
+  ticket: 0.08
+  round: 0.06
+crimes: [betting, mule]
+hardest_to_fake: "Repeat local buyers, small baskets, salary-day rhythm"
+base_rate: 0.01
+priors: {none: 0.77, growth: 0.10, decline: 0.03, adjacent: 0.08, betting: 0.015, mule: 0.005}

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "potf"
+version = "0.1.0"
+description = "Pricing Out the Front: a repeated-game system that makes merchant fronts unprofitable on a payment gateway"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Team Paisa Gaadi Mehenga Ghar" }]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "networkx>=3.0",
+    "pyyaml>=6.0",
+    "plotly>=5.18",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+potf = "potf.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+potf = ["nodes/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

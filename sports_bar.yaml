@@ -1,0 +1,14 @@
+# A match-night spike is NORMAL here; the same spike at a kirana is evidence.
+name: sports_bar
+label: Sports bar
+declared: "Food and drinks; screenings drive match-night crowds"
+capacity_txn_per_day: {small: 40, medium: 110, large: 260}
+ticket_mean: 900
+ticket_sd_log: 0.40
+shares: {round: 0.15, night: 0.45, new_payer: 0.35, top_payer: 0.07}
+calendar: {festival: 0.15, salary: 0.05, weekend: 0.35, match: 0.60}
+adjacent: {name: "Event and screening tickets", txn: 0.15, ticket: 0.30, round: 0.15}
+crimes: [betting, mule]
+hardest_to_fake: "Footfall on screening nights matching bar tabs"
+base_rate: 0.015
+priors: {none: 0.76, growth: 0.10, decline: 0.03, adjacent: 0.08, betting: 0.025, mule: 0.005}
